@@ -1,7 +1,7 @@
 
 class TicTacToeLogic:
     def __init__(self):
-        self.board= [["" for _ in range(3) for _ in range(3)]]
+        self.board= [["" for _ in range(3)] for _ in range(3)]
         self.c_player="X"
 
     def make_move(self, rows, cols):
@@ -25,10 +25,11 @@ class TicTacToeLogic:
         return None
 
     def check_draw(self):
-        for i in range(3):
-            for j in range(3):
-                if self.board[i][j]!="":
-                    return True
+        if self.check_winner() is None:
+            for i in range(3):
+                for j in range(3):
+                    if self.board[i][j] != "":
+                        return True
         return False
 
     def switch_player(self):
@@ -38,7 +39,7 @@ class TicTacToeLogic:
             self.c_player="X"
 
     def reset_game(self):
-        self.board = [["" for _ in range(3) for _ in range(3)]]
+        self.board = [["" for _ in range(3)] for _ in range(3)]
         self.c_player = "X"
 
 
