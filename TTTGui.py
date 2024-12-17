@@ -10,16 +10,17 @@ class TTTGui(QWidget):
         self.logic=TicTacToeLogic()
         self.layout=QGridLayout()
         self.setLayout(self.layout)
-        self.board = [["" for _ in range(3)] for _ in range(3)]
+        self.button = QPushButton("")
+        self.board = [[None for _ in range(3)] for _ in range(3)]
         self.create_board()
 
     def create_board(self):
         for row in range(3):
             for col in range(3):
-                button = QPushButton("")
+
                 button.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
                 button.setFont(QFont("Arial", 24))
-                button.clicked.connect(lambda checked, r=row, c=col: self.make_move(r, c))
+                button.clicked.connect(lambda checked, r=row, c=col: self.logic.make_move(r, c))
                 self.layout.addWidget(button, row, col)
                 self.board[row][col] = button
 
