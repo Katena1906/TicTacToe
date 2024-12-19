@@ -15,10 +15,17 @@ class MainWindow(QMainWindow):
             [self.ui.pushButton_17, self.ui.pushButton_14, self.ui.pushButton_13]
         ]
         self.ui.pushButton.clicked.connect(self.click_reset)
+        self.ui.pushButton_2.clicked.connect(self.close)
+
+
 
         for i in range(3):
             for j in range(3):
                 self.buttons[i][j].clicked.connect(lambda checked, row=i, col=j: self.on_button_clicked(row, col))
+
+    def close(self):
+        super().close()
+
     def click_reset(self):
         self.logic.reset_game()
         for i in range(3):
