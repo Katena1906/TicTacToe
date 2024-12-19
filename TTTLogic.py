@@ -25,12 +25,15 @@ class TicTacToeLogic:
         return None
 
     def check_draw(self):
-        if self.check_winner() is None:
-            for i in range(3):
-                for j in range(3):
-                    if self.board[i][j] != "":
-                        return True
-        return False
+        if self.check_winner() is not None:
+            return False
+
+        for i in range(3):
+            for j in range(3):
+                if self.board[i][j] == "":
+                    return False
+
+        return True
 
     def switch_player(self):
         if self.c_player=="X":

@@ -280,7 +280,7 @@ class Ui_TicTacToe(object):
         self.label_4.setText("")
         self.pushButton.setText(QCoreApplication.translate("TicTacToe", u"Reset game", None))
         self.pushButton_2.setText(QCoreApplication.translate("TicTacToe", u"Close", None))
-        self.label_2.setText(QCoreApplication.translate("TicTacToe", u"Current:", None))
+        self.label_2.setText(QCoreApplication.translate("TicTacToe", u"Current: X", None))
         self.label_3.setText(QCoreApplication.translate("TicTacToe", u"Winner:", None))
     # retranslateUi
 
