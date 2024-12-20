@@ -64,7 +64,6 @@ class MainWindow(QMainWindow):
                 button.setEnabled(True)
 
 if __name__ == "__main__":
-
         app = QApplication()
         window = MainWindow()
         window.show()
